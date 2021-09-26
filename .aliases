@@ -1,0 +1,18 @@
+alias ls='exa'
+alias ll='exa -l'
+alias lal='exa -alh'
+
+alias cat='bat'
+
+# Python venvs
+alias vba='source venv/bin/activate'
+
+# aliases for Kubernetes
+alias k='kubectl'
+
+# Custom git aliases
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gf='git fetch'
+alias gm='git merge'
+alias gs='git status'

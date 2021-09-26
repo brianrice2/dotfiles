@@ -28,7 +28,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Misc --------------------------------------------------------------------------------------------
 
-source ~/.aliases
+source ~/dev/dotfiles/.aliases
 
 # colorful `ls` output
 # https://www.cyberciti.biz/faq/apple-mac-osx-terminal-color-ls-output-option/
