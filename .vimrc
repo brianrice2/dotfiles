@@ -71,6 +71,8 @@ highlight LineNr ctermfg=7
 set scrolloff=5
 " Fixes common backspace problems
 set backspace=indent,eol,start
+" Set your cursor to be wherever your mouse clicks
+set mouse=a
 
 " Display options
 set showmode
