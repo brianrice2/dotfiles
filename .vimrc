@@ -1,4 +1,3 @@
-
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -63,7 +62,7 @@ set expandtab
 
 " Vim customizations -------------------------------------------------------
 set number
-set background=dark
+set background=light
 highlight NonText ctermfg=7
 highlight LineNr ctermfg=7
 
@@ -106,8 +105,8 @@ call plug#end()
 syntax on
 set t_Co=256
 set cursorline
-colorscheme onehalfdark
-let g:airline_theme='onehalfdark'
+colorscheme onehalflight
+let g:airline_theme='onehalflight'
 " lightline
 " let g:lightline = { 'colorscheme': 'onehalfdark' }
 
