@@ -1,6 +1,9 @@
-alias ls='exa'
-alias ll='exa -l'
-alias lal='exa -alh'
+alias ls='ls -hG'
+alias ll='ls -lhG'
+alias lal='ls -alhG'
+# alias ls='exa'
+# alias ll='exa -l'
+# alias lal='exa -alh'
 
 alias cat='bat'
 
