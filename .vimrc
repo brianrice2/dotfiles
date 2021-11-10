@@ -1,14 +1,3 @@
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2019 Jan 26
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
-
 " When started as "evim", evim.vim will already have done these settings, bail
 " out.
 if v:progname =~? "evim"
@@ -16,16 +5,9 @@ if v:progname =~? "evim"
 endif
 
 " Get the defaults that most users want.
-source $VIMRUNTIME/defaults.vim
+" source $VIMRUNTIME/defaults.vim
 
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup		" keep a backup file (restore to previous version)
-  if has('persistent_undo')
-    set undofile	" keep an undo file (undo changes after closing)
-  endif
-endif
+set nobackup
 
 if &t_Co > 2 || has("gui_running")
   " Switch on highlighting the last used search pattern.
@@ -63,8 +45,8 @@ set expandtab
 " Vim customizations -------------------------------------------------------
 set number
 set background=light
-highlight NonText ctermfg=7
-highlight LineNr ctermfg=7
+
+set laststatus=2
 
 " Display 5 lines above/below the cursor when scrolling with a mouse.
 set scrolloff=5
@@ -99,6 +81,8 @@ set viminfo='100,<9999,s100
 call plug#begin()
   Plug 'sonph/onehalf', { 'rtp': 'vim' }  " one-half color theme
   Plug 'preservim/nerdtree'  " Nerd tree file explorer
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Color schemes
@@ -107,6 +91,4 @@ set t_Co=256
 set cursorline
 colorscheme onehalflight
 let g:airline_theme='onehalflight'
-" lightline
-" let g:lightline = { 'colorscheme': 'onehalfdark' }
 
