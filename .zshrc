@@ -102,7 +102,8 @@ source $ZSH/oh-my-zsh.sh
 source ~/dev/dotfiles/.aliases
 
 # Powerline status
-. /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
+# This seems to make my terminal run noticeably slower. Haven't looked into it.
+# . /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
