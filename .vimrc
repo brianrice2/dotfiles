@@ -1,3 +1,7 @@
+"----------------------------------------------------------------------
+" General settings
+"----------------------------------------------------------------------
+
 " When started as "evim", evim.vim will already have done these settings, bail
 " out.
 if v:progname =~? "evim"
@@ -33,6 +37,10 @@ if has('syntax') && has('eval')
 endif
 
 
+"----------------------------------------------------------------------
+" Additional customizations
+"----------------------------------------------------------------------
+
 filetype plugin indent on
 " show existing tab with 4 spaces width
 set tabstop=4
@@ -41,8 +49,6 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
-
-" Vim customizations -------------------------------------------------------
 set number
 set background=light
 
@@ -77,7 +83,33 @@ set smartcase
 " Store info from no more than 100 files at a time, 9999 lines of text, 100kb of data. Useful for copying large amounts of data between files.
 set viminfo='100,<9999,s100
 
-" Vim plugins!!
+
+"----------------------------------------------------------------------
+" Key Mappings
+"----------------------------------------------------------------------
+
+" Remap a key sequence in insert mode to kick me out to normal
+" mode. This makes it so this key sequence can never be typed
+" again in insert mode, so it has to be unique.
+inoremap jj <esc>
+inoremap jJ <esc>
+inoremap Jj <esc>
+inoremap JJ <esc>
+inoremap jk <esc>
+inoremap jK <esc>
+inoremap Jk <esc>
+inoremap JK <esc>
+
+" Make j/k visual down and up instead of whole lines. This makes word
+" wrapping a lot more pleasent.
+map j gj
+map k gk
+
+
+"----------------------------------------------------------------------
+" Plugins
+"----------------------------------------------------------------------
+
 call plug#begin()
   Plug 'sonph/onehalf', { 'rtp': 'vim' }  " one-half color theme
   Plug 'preservim/nerdtree'  " Nerd tree file explorer
@@ -85,10 +117,22 @@ call plug#begin()
   Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
+
+"----------------------------------------------------------------------
+" Color schemes
+"----------------------------------------------------------------------
+
 " Color schemes
 syntax on
 set t_Co=256
 set cursorline
 colorscheme onehalflight
 let g:airline_theme='onehalflight'
+
+
+"----------------------------------------------------------------------
+" Autocommands
+"----------------------------------------------------------------------
+" Clear whitespace at the end of lines automatically
+autocmd BufWritePre * :%s/\s\+$//e
 
