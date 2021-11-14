@@ -19,3 +19,8 @@ alias gcm='git commit -m'
 alias gf='git fetch'
 alias gm='git merge'
 alias gs='git status'
+
+# Since there's no way to quit GlobalProtect (for NU VPN)
+alias quitglobalprotect='launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
+alias launchglobalprotect='launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
+
