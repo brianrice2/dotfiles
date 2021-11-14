@@ -83,6 +83,14 @@ set smartcase
 " Store info from no more than 100 files at a time, 9999 lines of text, 100kb of data. Useful for copying large amounts of data between files.
 set viminfo='100,<9999,s100
 
+" Disable background Color Erase for weird background discoloration
+if &term =~ '256color'
+    " Disable Background Color Erase (BCE) so that color schemes
+    " work properly when Vim is used inside tmux and GNU screen.
+    set t_ut=
+endif
+set term=screen-256color
+
 
 "----------------------------------------------------------------------
 " Key Mappings
@@ -126,8 +134,8 @@ call plug#end()
 syntax on
 set t_Co=256
 set cursorline
-colorscheme onehalflight
-let g:airline_theme='onehalflight'
+colorscheme onehalfdark
+let g:airline_theme='onehalfdark'
 
 
 "----------------------------------------------------------------------
