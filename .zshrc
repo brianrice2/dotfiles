@@ -99,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/dev/dotfiles/.aliases
+source ~/.aliases
 
 # Powerline status
 # This seems to make my terminal run noticeably slower. Haven't looked into it.
