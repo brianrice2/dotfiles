@@ -35,3 +35,7 @@ source ~/.bashrc
 
 
 export PATH="$HOME/.poetry/bin:$PATH"
+
+# >>> coursier install directory >>>
+export PATH="$PATH:/Users/brianrice/Library/Application Support/Coursier/bin"
+# <<< coursier install directory <<<
