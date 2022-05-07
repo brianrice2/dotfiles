@@ -5,6 +5,8 @@ alias lal='exa -alh'
 alias cat='bat'
 
 # Python
+alias python='python3'
+alias pip='pip3'
 alias vba='source venv/bin/activate'
 
 # Kubernetes

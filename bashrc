@@ -35,9 +35,6 @@ source ~/.aliases
 export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacad
 
-# change pip to point to pip3
-alias pip=pip3
-
 # load AWS/MySQL DB variables
 # source ~/.mysqlconfig
 
