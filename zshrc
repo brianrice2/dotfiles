@@ -120,5 +120,16 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Sedona
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home
+export SPARK_VERSION=3.2.1
+export SPARK_HOME=$HOME/dev/spark-3.2.1-bin-hadoop2.7
+export PYTHONPATH=$SPARK_HOME/python
 
+# Poetry
 export PATH="$HOME/.poetry/bin:$PATH"
+
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
