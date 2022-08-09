@@ -56,7 +56,7 @@ set shiftwidth=4
 set expandtab
 
 set number
-set background=light
+set background=dark
 
 set laststatus=2
 
