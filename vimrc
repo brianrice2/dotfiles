@@ -127,8 +127,10 @@ map k gk
 call plug#begin()
   Plug 'sonph/onehalf', { 'rtp': 'vim' }  " one-half color theme
   Plug 'preservim/nerdtree'  " Nerd tree file explorer
+  Plug 'airblade/vim-gitgutter'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 
