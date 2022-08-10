@@ -18,6 +18,9 @@ if has('persistent_undo')         "check if your vim version supports
   set undofile                    "turn on the feature
 endif
 
+" Where to save swap files
+set directory=$HOME/.vim/swap//
+
 
 if &t_Co > 2 || has("gui_running")
   " Switch on highlighting the last used search pattern.
