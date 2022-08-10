@@ -55,9 +55,12 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
+" Show current line number in absolut terms
 set number
-set background=dark
+" but every other line relative to the current one
+set relativenumber
 
+set background=dark
 set laststatus=2
 
 " Display 5 lines above/below the cursor when scrolling with a mouse.
