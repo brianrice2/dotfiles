@@ -1,3 +1,7 @@
 # Ignore vim edit/undo files
-.*~
+**/.*~
 vim/undo/
+nvim/backup
+nvim/plugged
+nvim/swap
+nvim/undo

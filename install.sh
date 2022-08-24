@@ -3,7 +3,7 @@
 # This installation is destructive, as it removes existing files/directories.
 # Use at your own risk.
 #
-# https://github.com/mitchellh/dotfiles
+# Taken from: https://github.com/mitchellh/dotfiles
 
 # Get path to the current script
 SCRIPT_NAME="$(basename ${BASH_SOURCE[0]})"

@@ -4,6 +4,8 @@ alias ll='exa -l'
 alias lal='exa -alh'
 alias cat='bat'
 
+alias vim='nvim'
+
 # Python
 alias python='python3'
 alias pip='pip3'

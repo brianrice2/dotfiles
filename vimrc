@@ -1,138 +1,32 @@
-"----------------------------------------------------------------------
-" General settings
-"----------------------------------------------------------------------
-
-" When started as "evim", evim.vim will already have done these settings, bail
-" out.
-if v:progname =~? "evim"
-  finish
-endif
-
-" Get the defaults that most users want.
-" source $VIMRUNTIME/defaults.vim
-
-set nobackup
-
-if has('persistent_undo')         "check if your vim version supports
-  set undodir=$HOME/.vim/undo     "directory where the undo files will be stored
-  set undofile                    "turn on the feature
-endif
-
-" Where to save swap files
-set directory=$HOME/.vim/swap//
-
-
-if &t_Co > 2 || has("gui_running")
-  " Switch on highlighting the last used search pattern.
-  set hlsearch
-endif
-
-" Put these in an autocmd group, so that we can delete them easily.
-augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-augroup END
-
-" Add optional packages.
-"
-" The matchit plugin makes the % command work better, but it is not backwards
-" compatible.
-" The ! means the package won't be loaded right away but when plugins are
-" loaded during initialization.
-if has('syntax') && has('eval')
-  packadd! matchit
-endif
-
-
-"----------------------------------------------------------------------
-" Additional customizations
-"----------------------------------------------------------------------
-
-filetype plugin indent on
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-" On pressing tab, insert 4 spaces
-set expandtab
-
-" Show current line number in absolut terms
-set number
-" but every other line relative to the current one
-set relativenumber
-
-set background=dark
-set laststatus=2
-
-" Display 5 lines above/below the cursor when scrolling with a mouse.
-set scrolloff=5
-" Fixes common backspace problems
-set backspace=indent,eol,start
-" Set your cursor to be wherever your mouse clicks
-set mouse=a
-
-" Display options
-set showmode
-set showcmd
-
-" Highlight matching pairs of brackets. Use the '%' character to jump between them.
-set matchpairs+=<:>
-
-" Encoding
+" Installation Instructions
+"	1. Place file in home directory as .vimrc
+"	2. Run the following command in terminal
+"		mkdir .vim .vim/bundle .vim/backup .vim/swap .vim/cache .vim/undo; curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"	3. Launch Vim and Run
+"		:PlugInstall
+"	5. Restart Vim
+scriptencoding utf-8
 set encoding=utf-8
 
-" Highlight matching search patterns
-set hlsearch
-" Enable incremental search
-set incsearch
-" Include matching uppercase words with lowercase search term
-set ignorecase
-" Include only uppercase words with uppercase search term
-set smartcase
-
-" Store info from no more than 100 files at a time, 9999 lines of text, 100kb of data. Useful for copying large amounts of data between files.
-set viminfo='100,<9999,s100
-
-" Disable background Color Erase for weird background discoloration
-if &term =~ '256color'
-    " Disable Background Color Erase (BCE) so that color schemes
-    " work properly when Vim is used inside tmux and GNU screen.
-    set t_ut=
+" Home path
+if has("nvim")
+    " Neovim
+    let g:vim_home_path = "~/nvim"
+elseif has("win32")
+    " We're on Windows.
+    let g:vim_home_path = "~/vimfiles"
+else
+    " We're on some POSIX system, hopefully.
+    let g:vim_home_path = "~/.vim"
 endif
-set term=screen-256color
-
-
-"----------------------------------------------------------------------
-" Key Mappings
-"----------------------------------------------------------------------
-
-" Remap a key sequence in insert mode to kick me out to normal
-" mode. This makes it so this key sequence can never be typed
-" again in insert mode, so it has to be unique.
-inoremap jj <esc>
-inoremap jJ <esc>
-inoremap Jj <esc>
-inoremap JJ <esc>
-inoremap jk <esc>
-inoremap jK <esc>
-inoremap Jk <esc>
-inoremap JK <esc>
-
-" Make j/k visual down and up instead of whole lines. This makes word
-" wrapping a lot more pleasent.
-map j gj
-map k gk
 
 
 "----------------------------------------------------------------------
 " Plugins
 "----------------------------------------------------------------------
 
-call plug#begin()
-  Plug 'sonph/onehalf', { 'rtp': 'vim' }  " one-half color theme
-  Plug 'preservim/nerdtree'  " Nerd tree file explorer
+call plug#begin(g:vim_home_path . "/plugged")
+  Plug 'sonph/onehalf', { 'rtp': 'vim' }
   Plug 'airblade/vim-gitgutter'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -140,26 +34,9 @@ call plug#end()
 
 
 "----------------------------------------------------------------------
-" Color schemes
+" Initialize
 "----------------------------------------------------------------------
-
-" Color schemes
-syntax on
-set t_Co=256
-set cursorline
-colorscheme onehalfdark
-let g:airline_theme='onehalfdark'
-
-
-"----------------------------------------------------------------------
-" Autocommands
-"----------------------------------------------------------------------
-" Clear whitespace at the end of lines automatically
-autocmd BufWritePre * :%s/\s\+$//e
-
-" NERDTree
-" Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
-" Close the tab if NERDTree is the only window remaining in it.
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-
+" Load in my custom vimrc if it exists
+if filereadable(expand(g:vim_home_path . "/plugged/vim-misc/vimrc.vim"))
+    execute "source " . g:vim_home_path . "/plugged/vim-misc/vimrc.vim"
+endif
