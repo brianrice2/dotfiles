@@ -15,6 +15,7 @@ call plug#begin('~/nvim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'fatih/vim-go', { 'tag': '*' }
 call plug#end()
 
 
