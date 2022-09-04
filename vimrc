@@ -31,6 +31,7 @@ call plug#begin(g:vim_home_path . "/plugged")
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
 
 
