@@ -1,6 +1,13 @@
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH";
 
-# silence warning about new default of zsh
-export BASH_SILENCE_DEPRECATION_WARNING=1
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.{path,bash_profile,bash_prompt,bashrc,exports,aliases,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 
 # use anaconda for python env
 # export PATH="/usr/local/anaconda3/bin:$PATH"  # commented out by conda initialize
@@ -30,11 +37,6 @@ unset __conda_setup
 
 # this might be for Rust?
 source "$HOME/.cargo/env"
-
-source ~/.bashrc
-
-
-export PATH="$HOME/.poetry/bin:$PATH"
 
 # >>> coursier install directory >>>
 export PATH="$PATH:/Users/brianrice/Library/Application Support/Coursier/bin"
