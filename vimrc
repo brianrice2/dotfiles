@@ -30,7 +30,7 @@ call plug#begin(g:vim_home_path . "/plugged")
   Plug 'airblade/vim-gitgutter'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'fatih/vim-go', { 'tag': '*' }
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 
