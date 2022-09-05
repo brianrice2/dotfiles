@@ -1,0 +1,40 @@
+[user]
+	name = Brian Rice
+	email = brianrice013@gmail.com
+
+[color]
+	ui = auto
+
+[core]
+	editor = nvim
+	autocrlf = input
+	excludesfiles = /Users/brianrice/.gitignore
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[commit]
+	template = /Users/brianrice/.git_commit_template
+
+[merge]
+	conflictstyle = diff3
+
+[alias]
+	unstage = reset HEAD --
+	last = log -1 HEAD
+
+[credential]
+	helper = osxkeychain
+
+[fetch]
+	prune = true
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = false
+

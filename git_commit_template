@@ -1,0 +1,26 @@
+
+# Subject line. Summarize changes in < 50 characters.
+#
+# (optional) A detailed explanation here. Keep it concise at
+#   around 100 characters. The blank line separator is key.
+#
+# (optional) The reason for our commit or what problem we
+#   solved. Detail any side effects or unintuitive consequences.
+#
+# - Bullet points are okay, too
+#
+# - Typically a hyphen or asterisk is used for the bullet,
+#   followed by a single space, with blank lines in between,
+#   but conventions vary here
+#
+# Mention any related Jira tickets or Github issues at the end:
+#
+# GitHub:
+#   If the commit fixes a GitHub issue, include
+#     "Fixes #<issue-number>". This will ensure that the issue is
+#     automatically closed when the commit is merged into master.
+#     Also include "Fixes #<issue-number>" in the PR description.
+#
+# Jira:
+#   Resolves: TASK-123
+#   Relates to: TASK-456
