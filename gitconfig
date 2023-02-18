@@ -38,3 +38,6 @@
 [pull]
 	rebase = false
 
+[log]
+	decorate = auto
+
