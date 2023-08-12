@@ -18,3 +18,28 @@ export MANPAGER='less -X';
 
 # Hide the “default interactive shell is now zsh” warning on macOS
 export BASH_SILENCE_DEPRECATION_WARNING=1;
+
+# update path for Make > 3.8.1
+# gnubin path since make was installed as "gmake"
+export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+
+# coursier
+export PATH="$PATH:/Users/brianrice/Library/Application Support/Coursier/bin"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# gcc-arm-none-eabi for QMK
+export PATH="/Applications/ARM/bin:$PATH"
+
+# Holy shit homebrew is annoying
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+# direnv
+eval "$(direnv hook bash)"

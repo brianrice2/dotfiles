@@ -20,10 +20,7 @@ shopt -s nocaseglob;
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults;
 
-# update path for Make > 3.8.1
-# gnubin path since make was installed as "gmake"
-export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
-
-# >>> coursier install directory >>>
-export PATH="$PATH:/Users/brianrice/Library/Application Support/Coursier/bin"
-# <<< coursier install directory <<<
+# Ruby
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.1.3

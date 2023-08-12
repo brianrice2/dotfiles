@@ -1,9 +1,13 @@
+# Safety!
+alias rm='safe-rm'
+
 # Navigation
 alias ls='exa'
 alias ll='exa -l'
 alias lal='exa -alh'
 alias cat='bat'
 
+# Editing
 alias vim='nvim'
 
 # Python
