@@ -26,8 +26,8 @@ call plug#end()
 
 set backspace=2           " Makes backspace not behave all stupid
 set hidden                " Allow buffers to be backgrounded without being saved
-set number
-set relativenumber
+set number                " Show the current line number
+set relativenumber        " Show relative line numbers for vim commands
 set ruler                 " Show the line number and column in the status bar
 set laststatus=2          " Always show the status bar
 set t_Co=256              " Use 256 colors
@@ -107,7 +107,7 @@ inoremap Jk <esc>
 inoremap JK <esc>
 
 " Make j/k visual down and up instead of whole lines. This makes word
-" wrapping a lot more pleasent.
+" wrapping a lot more pleasant.
 map j gj
 map k gk
 
@@ -122,4 +122,3 @@ autocmd BufWritePre * :%s/\s\+$//e
 "----------------------------------------------------------------------
 " Plugin settings
 "----------------------------------------------------------------------
-

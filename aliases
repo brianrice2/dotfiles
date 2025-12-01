@@ -30,3 +30,6 @@ alias gt='git tag'
 
 # Kubernetes
 alias k='kubectl'
+
+# Homebrew
+alias uninstall="brew uninstall --zap"
