@@ -5,3 +5,6 @@ nvim/backup
 nvim/plugged
 nvim/swap
 nvim/undo
+
+.DS_Store
+**/.DS_Store
