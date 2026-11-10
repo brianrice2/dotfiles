@@ -1,0 +1,37 @@
+[user]
+	name = Brian Rice
+	email = 51218458+brianrice2@users.noreply.github.com
+
+[color]
+	ui = auto
+
+[core]
+	autocrlf = input
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[merge]
+	conflictstyle = diff3
+
+[alias]
+	unstage = reset HEAD --
+	last = log -1 HEAD
+
+[credential]
+	helper = osxkeychain
+
+[fetch]
+	prune = true
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = false
+
+[log]
+	decorate = auto
