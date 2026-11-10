@@ -1,0 +1,6 @@
+# Factory default
+# PS1="%n@%m %1~ %# "
+
+PS1="%n @ %1~ %# "
+
+export PS1;
